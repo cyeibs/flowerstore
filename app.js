@@ -9,7 +9,7 @@ const path = require('path');
 // Импортируем созданный в отдельный файлах рутеры.
 const indexRouter = require('./routes/index');
 // const entriesRouter = require('./routes/entries');
-// const userRouter = require('./routes/user')
+const userRouter = require('./routes/user')
 
 const app = express();
 const PORT = 3000;
@@ -28,23 +28,24 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 // Подключаем middleware, которое позволяет читать переменные JavaScript, сохранённые в формате JSON в body HTTP-запроса.
 app.use(express.json());
-// app.use(cookieParser());
+app.use(cookieParser());
 
-// app.use(session({
-//   store: new FileStore(),
-//   secret: 'fjhkfhgkjsdhfjknkjdsf',
-//   resave: false,
-//   saveUninitialized: false,
-//   cookie: { secure: false },
-//   name: "authorization"
-// }))
+app.use(session({
+  store: new FileStore(),
+  secret: 'fjhkfhgkjsdhfjknkjdsf',
+  resave: false,
+  saveUninitialized: false,
+  cookie: { secure: false },
+  name: "authorization"
+}))
 
-// app.use((req, res, next) => {
-//   res.locals.username = req.session?.user; // optional chaining operator
-//   next();
-// });
+app.use((req, res, next) => {
+  res.locals.username = req.session?.user; // optional chaining operator
+  next();
+});
 
 app.use('/', indexRouter);
+app.use('/user', userRouter);
 
 
 // Если HTTP-запрос дошёл до этой строчки, значит ни один из ранее встречаемых рутов не ответил на запрос. Это значит, что искомого раздела просто нет на сайте. Для таких ситуаций используется код ошибки 404. Создаём небольшое middleware, которое генерирует соответствующую ошибку.
