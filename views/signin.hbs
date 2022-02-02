@@ -1,4 +1,4 @@
-<form action="/user/signin" method="POST">
+{{!-- <form action="/user/signin" method="POST">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
@@ -9,4 +9,55 @@
     <input type="password" class="form-control" id="exampleInputPassword1" name="password">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+</form> --}}
+
+           <!-- Section -->
+        <section class="min-vh-100 d-flex bg-primary align-items-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 col-lg-6 justify-content-center">
+                        <div class="card bg-primary shadow-soft border-light p-4">
+                            <div class="card-header text-center pb-0">
+                                <h2 class="h4">Вход в профиль</h2>  
+                            </div>
+                            <div class="card-body">
+                                <form action="/user/signin" method="POST" class="mt-4">
+                                    <!-- Form -->
+                                    <div class="form-group">
+                                        <label for="exampleInputIcon3">Введите email</label>
+                                        <div class="input-group mb-4">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><span class="fas fa-envelope"></span></span>
+                                            </div>
+                                            <input class="form-control" id="exampleInputIcon3" placeholder="mail@mail.ru" type="text" aria-label="email adress" name="email">
+                                        </div>
+                                    </div>
+                                    <!-- End of Form -->
+                                    <div class="form-group">
+                                        <!-- Form -->
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword6">Введите пароль:</label>
+                                            <div class="input-group mb-4">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><span class="fas fa-unlock-alt"></span></span>
+                                                </div>
+                                                <input class="form-control" id="exampleInputPassword6" placeholder="password" type="password" name="password" aria-label="Password" required>
+                                            </div>
+                                        </div>
+                                        <!-- End of Form -->
+                                
+                                    </div>
+                                    <button type="submit" class="btn btn-block btn-primary">Войти</button>
+                                </form>
+                                <div class="d-block d-sm-flex justify-content-center align-items-center mt-4">
+                                    <span class="font-weight-normal">
+                                        Не зарегистрированы?
+                                        <a href="/user/signup" class="font-weight-bold">Создать аккаунт</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
