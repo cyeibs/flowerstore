@@ -8,7 +8,7 @@ router.get('/signup', (req, res) => {
 
 router.post('/signup', async (req, res) => {
   const newUser = await User.create(req.body);
-  req.session.user = newUser.username
+  req.session.user = newUser.name
   req.session.userid = newUser.id
   console.log(req.session.user);
   res.redirect('/user/profile');
@@ -23,7 +23,7 @@ router.post('/signin', async (req, res) => {
   const user = await User.findOne({ where: { email } });
   console.log(user.id);
   if (user) {
-    req.session.user = user.username
+    req.session.user = user.name
     req.session.userid = user.id
     res.redirect('/user/profile');
   } else {
