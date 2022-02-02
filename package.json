@@ -1,0 +1,40 @@
+{
+  "name": "flowerstore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "nodemon": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cyeibs/flowerstore.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cyeibs/flowerstore/issues"
+  },
+  "homepage": "https://github.com/cyeibs/flowerstore#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "hbs": "^4.2.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15",
+    "pg-hstore": "^2.3.4",
+    "ph": "^0.1.10",
+    "sequelize": "^6.15.0",
+    "sequelize-cli": "^6.4.1",
+    "session-file-store": "^1.5.0",
+    "sha256": "^0.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.8.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4"
+  }
+}
