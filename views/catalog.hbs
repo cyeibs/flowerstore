@@ -26,13 +26,13 @@
                         <span class="nav-link-inner-text">Цветы</span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="TODO:#">Красные</a></li>
-                        <li><a class="dropdown-item" href="TODO:#">Черные</a></li>
-                        <li><a class="dropdown-item" href="TODO:#">Китайские</a></li>
+                        {{#each allCats}}
+                        <li><a class="dropdown-item" href="/catalog/{{this.catName}}">{{this.catName}}</a></li>
+                        {{/each}}
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="TODO:#" class="nav-link">Все букеты</a>
+                    <a href="/catalog" class="nav-link">Все букеты</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link" data-toggle="dropdown" role="button">
@@ -40,8 +40,8 @@
                         <span class="nav-link-inner-text">Сортировка</span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="TODO:#">Цена: по возрастанию</a></li>
-                        <li><a class="dropdown-item" href="TODO:#">Цена: по убыванию</a></li>
+                        <li><a class="dropdown-item" href="/catalog/sort/byDesc">Цена: по убыванию</a></li>
+                        <li><a class="dropdown-item" href="/catalog/sort/byAsc">Цена: по возрастанию</a></li>
                     </ul>
                 </li>
             </ul>
@@ -64,16 +64,18 @@
           <div class="card bg-primary border-light shadow-soft">
               <img src={{this.pic}} class="card-img-top rounded-top" alt="Themesberg office">
               <div class="card-body">
-                  <span class="h6 icon-tertiary small"><span class="fas fa-medal mr-2"></span>Awards</span>
                   <h3 class="h5 card-title mt-3">{{this.fName}}</h3>
-                  <p class="card-text">{{this.discr}}</p>
+                  <p class="card-text">{{this.descr}}</p>
+                  <h3 class="h5 card-title mt-3">{{this.price}} р</h3>
                   <a href="#" class="btn btn-primary btn-sm">В корзину</a>
               </div>
           </div>
       </div>
+
+ {{/each}}
     </div>
 
-    {{/each}}
+    
 
 </div>
 
