@@ -27,7 +27,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         {{#each allCats}}
-                        <li><a class="dropdown-item" href="/catalog/{{this.catName}}">{{this.catName}}</a></li>
+                        <li><a class="dropdown-item cats-button" name={{this.catName}} href="/catalog/{{this.catName}}">{{this.catName}}</a></li>
                         {{/each}}
                     </ul>
                 </li>
@@ -79,3 +79,4 @@
 
 </div>
 
+<script defer src="/js/catalog.js"></script>
