@@ -1,0 +1,74 @@
+<style>
+  form {
+    display: flex;
+    width: 100% !important;
+    margin: 0;
+    justify-content: space-between;
+    padding: 0 50px;
+
+  }
+
+  .form__myDiv {
+    width: 40%;
+  }
+</style>
+
+
+<form action="#">
+  <div class="form__myDiv">
+    <div class="form-group mb-3">
+      <label for="name">Ваше имя</label>
+      <input type="text" class="form-control" id="email" aria-describedby="emailHelp">
+
+    </div>
+    <div class="form-group mb-3">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="password">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea2">Ваше сообщение </label>
+      <textarea class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Отправить</button>
+  </div>
+
+  <div class="row form__myDiv">
+    <div class="col-12 col-md-6 mt-5">
+      <!-- Profile Card -->
+      <div class="profile-card mb-5">
+        <div class="card bg-primary shadow-inset border-light text-center">
+
+          <div class="card-body pb-5">
+            <h3 class="h5 mb-2">Режим работы:</h3>
+            <span class="h6 font-weight-normal text-gray mb-3">Работаем круглосуточно, без выходных</span>
+
+            <h3 class="h5 mb-2">Контакты:</h3>
+
+            <span class="h6 font-weight-normal text-gray mb-3">gladeldlowers@gmail.com</span>
+            <span class="h6 font-weight-normal text-gray mb-3">8(800)883-33-33</span>
+
+            <ul class="list-unstyled d-flex justify-content-center mt-3 mb-4">
+
+
+              <li>
+                <a href="#" target="_blank" aria-label="facebook social link" class="icon icon-xs icon-facebook mr-3">
+                  <span class="fab fa-facebook-f"></span>
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank" aria-label="twitter social link" class="icon icon-xs icon-twitter mr-3">
+                  <span class="fab fa-twitter"></span>
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank" aria-label="slack social link" class="icon icon-xs icon-slack mr-3">
+                  <span class="fab fa-slack-hash"></span>
+                </a>
+              </li>
+
+            </ul>
+
+          </div>
+        </div>
+      </div>
