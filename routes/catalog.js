@@ -29,6 +29,26 @@ router.get('/:catName', async (req, res) => {
   res.render('catalog', { allFlowers, allCats });
 });
 
+// TODO: переписать на фетч
+router.post('/:catName', async (req, res) => {
+  try {
+    const allCats = await Cat.findAll();
+    const catName = req.params.catName;
+    const allFlowersByCatName = await Flower.findAll({
+      include: [
+        {
+          model: Cat,
+          where: { catName: `${catName}` }, //
+        },
+      ],
+    });
+    const allFlowers = allFlowersByCatName;
+    res.json({ allFlowers, allCats });
+  } catch (err) {
+    res.sendStatus(500);
+  }
+});
+
 router.get('/sort/byDesc', async (req, res) => {
   // По убыванию
   const allCats = await Cat.findAll();
