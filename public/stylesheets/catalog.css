@@ -1,0 +1,21 @@
+.catalog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.col-12 {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.row {
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .col-md-6 {
+    max-width: 300px;
+  }  
+}
