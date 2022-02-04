@@ -1,7 +1,7 @@
 const express = require('express');
 const sha256 = require('sha256'); // Шифровщик
 const router = express.Router(); // Подключение роутеров
-const { Flower, Cat, JoinTable } = require('../db/models'); // Подключение модели
+const { Flower, Cat, JoinTable, Bin } = require('../db/models'); // Подключение модели
 // const { checkAuthorisation } = require('../middleware/allMiddle'); // TODO: Подключение мидлваров
 
 // /catalog
@@ -30,6 +30,7 @@ router.get('/:catName', async (req, res) => {
 });
 
 router.post('/:catName', async (req, res) => {
+  console.log(':catname');
   try {
     const allCats = await Cat.findAll();
     const catName = req.params.catName;
@@ -108,8 +109,15 @@ router.post('/sort/byAsc', async (req, res) => {
   }
 });
 
-router.post('/addToBin', async (req, res) => {
-
+router.post('/bin/addToBin', async (req, res) => {
+  const { id } = req.body;
+  const userId = req.session.userid;
+  const push = await Bin.create({
+    userId,
+    flowerId: id,
+    count: 1,
+    status: false,
+  });
 });
 
 // Код
