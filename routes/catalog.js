@@ -29,7 +29,6 @@ router.get('/:catName', async (req, res) => {
   res.render('catalog', { allFlowers, allCats });
 });
 
-// TODO: переписать на фетч
 router.post('/:catName', async (req, res) => {
   try {
     const allCats = await Cat.findAll();
@@ -49,6 +48,17 @@ router.post('/:catName', async (req, res) => {
   }
 });
 
+// forfetch Ручка для всех букетов
+router.post('/', async (req, res) => {
+  try {
+    console.log('Я здесь');
+    const allFlowers = await Flower.findAll();
+    res.json({ allFlowers });
+  } catch (err) {
+    res.sendStatus(500);
+  }
+});
+
 router.get('/sort/byDesc', async (req, res) => {
   // По убыванию
   const allCats = await Cat.findAll();
@@ -60,6 +70,19 @@ router.get('/sort/byDesc', async (req, res) => {
   res.render('catalog', { allFlowers, allCats });
 });
 
+router.post('/sort/byDesc', async (req, res) => {
+  try {
+    const allCats = await Cat.findAll();
+    const allFlowersByDesc = await Flower.findAll({
+      order: [['price', 'DESC']],
+    });
+    const allFlowers = allFlowersByDesc;
+    res.json({ allFlowers });
+  } catch (err) {
+    res.sendStatus(500);
+  }
+});
+
 router.get('/sort/byAsc', async (req, res) => {
   // По возрастанию
   const allCats = await Cat.findAll();
@@ -69,6 +92,24 @@ router.get('/sort/byAsc', async (req, res) => {
   const allFlowers = allFlowersByAsc;
 
   res.render('catalog', { allFlowers, allCats });
+});
+
+router.post('/sort/byAsc', async (req, res) => {
+  // По возрастанию
+  try {
+    const allCats = await Cat.findAll();
+    const allFlowersByAsc = await Flower.findAll({
+      order: [['price', 'ASC']],
+    });
+    const allFlowers = allFlowersByAsc;
+    res.json({ allFlowers });
+  } catch (err) {
+    res.sendStatus(500);
+  }
+});
+
+router.post('/addToBin', async (req, res) => {
+
 });
 
 // Код

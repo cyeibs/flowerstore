@@ -55,8 +55,8 @@
                         <span class="nav-link-inner-text">Сортировка</span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/catalog/sort/byDesc">Цена: по убыванию</a></li>
-                        <li><a class="dropdown-item" href="/catalog/sort/byAsc">Цена: по возрастанию</a></li>
+                        <li><a class="dropdown-item sort-desc" href="/catalog/sort/byDesc">Цена: по убыванию</a></li>
+                        <li><a class="dropdown-item sort-asc" href="/catalog/sort/byAsc">Цена: по возрастанию</a></li>
                     </ul>
                 </li> --}}
             </ul>
@@ -71,7 +71,23 @@
         </div>
     </div>
   </nav>
-    <div class="row">
+
+    <template class="teplate-shablon">
+        <div class="col-12 col-md-6 id" id={this.id}>
+          <div class="card bg-primary border-light shadow-soft">
+              <img src={this.pic} class="card-img-top rounded-top" alt="Themesberg office">
+              <div class="card-body">
+                  <h3 class="h5 card-title mt-3 fName">{this.fName}</h3>
+                  <p class="card-text descr">{this.descr}</p>
+                  <h3 class="h5 card-title mt-3">{this.price} р</h3>
+                  <a href="#" class="btn btn-primary btn-sm to-bin-button">В корзину</a>
+              </div>
+          </div>
+      </div>
+    </template>
+
+    <div class="row shablon">
+        
 
       {{#each allFlowers}}
 
