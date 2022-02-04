@@ -1,6 +1,4 @@
-<link rel="stylesheet" href="/stylesheets/catalog.css">
 <div class="catalog">
-  <h3>Каталог</h3>
   <nav class="navbar navbar-expand-lg navbar-transparent navbar-light navbar-theme-primary mb-4">
     <div class="container position-relative">
         <div class="navbar-collapse collapse" id="navbar-default-primary">
@@ -20,21 +18,38 @@
                 </div>
             </div>
             <ul class="navbar-nav navbar-nav-hover align-items-lg-center">  
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link" data-toggle="dropdown" role="button">
-                        <i class="fas fa-angle-down nav-link-arrow"></i>
-                        <span class="nav-link-inner-text">Цветы</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        {{#each allCats}}
-                        <li><a class="dropdown-item cats-button" name={{this.catName}} href="/catalog/{{this.catName}}">{{this.catName}}</a></li>
-                        {{/each}}
-                    </ul>
+              
+    <div class="btn-group mr-2 mb-2">
+        <button type="button" class="btn btn-primary">Цветы</button>
+        <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="fas fa-angle-down dropdown-arrow"></span>
+        </button>
+        <div class="dropdown-menu">
+          {{#each allCats}}
+            <a class="dropdown-item" href="/catalog/{{this.catName}}">{{this.catName}}</a>
+         {{/each}}
+        </div>
+        
+    </div>
+       
+                  
+          <li class="nav-item">
+                     <a href="/catalog" class="btn btn-primary text-dark mr-2 mb-2">Все букеты</a>
                 </li>
-                <li class="nav-item">
-                    <a href="/catalog" class="nav-link all-bucets">Все букеты</a>
-                </li>
-                <li class="nav-item dropdown">
+
+      <div class="btn-group mr-2 mb-2">
+        <button type="button" class="btn btn-primary">Сортировка</button>
+        <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="fas fa-angle-down dropdown-arrow"></span>
+        </button>
+       <div class="dropdown-menu">
+
+            <a class="dropdown-item" href="/catalog/sort/byDesc">Цена: по убыванию</a>
+            <a class="dropdown-item" href="/catalog/sort/byAsc">Цена: по возрастанию</a>
+       
+        </div>
+
+                {{!-- <li class="nav-item dropdown">
                     <a href="#" class="nav-link" data-toggle="dropdown" role="button">
                         <i class="fas fa-angle-down nav-link-arrow"></i>
                         <span class="nav-link-inner-text">Сортировка</span>
@@ -43,7 +58,7 @@
                         <li><a class="dropdown-item sort-desc" href="/catalog/sort/byDesc">Цена: по убыванию</a></li>
                         <li><a class="dropdown-item sort-asc" href="/catalog/sort/byAsc">Цена: по возрастанию</a></li>
                     </ul>
-                </li>
+                </li> --}}
             </ul>
         </div>
         <div class="d-flex align-items-center">
@@ -83,7 +98,7 @@
                   <h3 class="h5 card-title mt-3">{{this.fName}}</h3>
                   <p class="card-text">{{this.descr}}</p>
                   <h3 class="h5 card-title mt-3">{{this.price}} р</h3>
-                  <a href="#" class="btn btn-primary btn-sm">В корзину</a>
+                  <a href="#" class="btn btn-primary btn-pill text-dark mr-2 mb-2">В корзину</a>
               </div>
           </div>
       </div>
@@ -96,3 +111,4 @@
 </div>
 
 <script defer src="/js/catalog.js"></script>
+<link rel="stylesheet" href="/stylesheets/catalog.css">

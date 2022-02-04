@@ -14,7 +14,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap");
 /*
  * 	Default theme - Owl Carousel CSS File
  */
@@ -95,7 +95,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
     margin: 0;
-    font-family: "Nunito Sans", sans-serif;
+    font-family: "Raleway", sans-serif;
     font-size: 1rem;
     font-weight: 300;
     line-height: 1.5;
@@ -6118,7 +6118,7 @@ input[type="button"].btn-block {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
 }
 
 .navbar > .container,
@@ -6132,7 +6132,6 @@ input[type="button"].btn-block {
 .navbar-brand {
     display:flex;
     padding-top: 2.0625rem;
-    margin-right: 1rem;
     font-size: 1.25rem;
     line-height: inherit;
     white-space: nowrap;
@@ -6535,11 +6534,22 @@ input[type="button"].btn-block {
 
 .card-title {
     margin-bottom: 1.25rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 .card-subtitle {
     margin-top: -0.625rem;
     margin-bottom: 0;
+}
+
+p.card-text {
+
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 10vh;
 }
 
 .card-text:last-child {
@@ -8816,7 +8826,7 @@ a.close.disabled {
     z-index: 1070;
     display: block;
     margin: 0;
-    font-family: "Nunito Sans", sans-serif;
+    font-family: "Raleway", sans-serif;
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;
@@ -8929,7 +8939,7 @@ a.close.disabled {
     z-index: 1060;
     display: block;
     max-width: 276px;
-    font-family: "Nunito Sans", sans-serif;
+    font-family: "Raleway", sans-serif;
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;
@@ -11032,6 +11042,10 @@ button.bg-slack:focus {
     min-height: 100vh !important;
 }
 
+.min-vh-50 {
+  min-height: 50vh !important;
+}
+
 .vw-100 {
     width: 100vw !important;
 }
@@ -11130,7 +11144,7 @@ button.bg-slack:focus {
 
 .mt-3,
 .my-3 {
-    margin-top: 1rem !important;
+    margin-top: 0rem !important;
 }
 
 .mr-3,
@@ -25270,6 +25284,7 @@ button.section-slack:focus {
     }
 
     .navbar-nav .dropdown-menu.show {
+        margin-top: 2vh;
         opacity: 1;
         pointer-events: auto;
         animation: show-navbar-dropdown .25s ease forwards;
@@ -30408,6 +30423,7 @@ textarea[resize="horizontal"] {
 
 .nav-pills .nav-item:not(:last-child) {
     padding-right: 2rem;
+    padding-bottom: 1rem;
 }
 
 .nav-pills .nav-link {
@@ -31744,12 +31760,12 @@ textarea[resize="horizontal"] {
  */
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: "Nunito Sans", sans-serif;
+    font-family: "Raleway", sans-serif;
     font-weight: 400;
 }
 
 p, ol li, ul li {
-    font-family: "Nunito Sans", sans-serif;
+    font-family: "Raleway", sans-serif;
     font-size: 1rem;
     font-weight: 300;
     line-height: 1.6;
