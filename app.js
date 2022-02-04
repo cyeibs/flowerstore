@@ -22,7 +22,7 @@ const contactRouter = require('./routes/contactRouter');
 const binRouter = require('./routes/binRouter');
 
 const app = express();
-const PORT = 3007;
+const PORT = 3000;
 
 // Сообщаем express, что в качестве шаблонизатора используется "hbs".
 app.set('view engine', 'hbs');
