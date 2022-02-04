@@ -79,6 +79,13 @@ document.addEventListener('click', async (event) => {
 
   if (thisElement.classList.contains('to-bin-button')) {
     event.preventDefault();
-    
+    const id = thisElement.closest('.col-12').id;
+    const res = fetch('http://localhost:3000/catalog/bin/addToBin', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ id }),
+    });
   }
 });

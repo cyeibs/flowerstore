@@ -1,10 +1,9 @@
 {
   "development": {
-    "username": "newuser",
-    "password": "11223344",
+    "username": "danila",
+    "password": "02069288",
     "database": "flowerstore",
     "host": "127.0.0.1",
-    "port": 8081,
     "dialect": "postgres"
   },
   "test": {
