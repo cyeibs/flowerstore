@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { User, Flower, Cat, JoinTable, Contact } = require('../db/models')
+const { User, Flower, Cat, JoinTable, Contact, Bin } = require('../db/models')
 
 router.get('/signup', (req, res) => {
   res.render('signup')
@@ -11,7 +11,7 @@ router.post('/signup', async (req, res) => {
   req.session.user = newUser.name
   req.session.userid = newUser.id
   console.log(req.session.user);
-  res.redirect('/user/profile');
+  res.redirect('/catalog');
 });
 
 router.get('/signin', async (req, res) => {
@@ -21,17 +21,11 @@ router.get('/signin', async (req, res) => {
 router.post('/signin', async (req, res) => {
   const { email } = req.body;
   const user = await User.findOne({ where: { email } });
-  console.log(user.id);
-  let isAdmin;
 
   if (user) {
     req.session.user = user.name
     req.session.userid = user.id
-    // adminname = await User.findOne({where: { name: req.session.user }, });
-    // if (adminname.name == 'admin') { 
-    //   isAdmin = 'Active'
-    // } 
-    res.redirect('/user/profile');
+    res.redirect('/catalog');
   } else {
     res.redirect('/user/signup')
   }

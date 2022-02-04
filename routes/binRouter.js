@@ -5,6 +5,7 @@ const Sequelize = require("sequelize");
 const { Flower, Cat, JoinTable, Bin, User } = require('../db/models');
 
 
+
 // router.get('/bin', async (req, res) => {
 //   try {
 //    const allFlowers = await Flower.findAll(
@@ -33,12 +34,12 @@ const { Flower, Cat, JoinTable, Bin, User } = require('../db/models');
 
 router.get('/', async (req, res) => {
   // const allBins = await Bin.findAll();
-
   const allBins = await Bin.findAll({
     include: {
       model: Flower,
       required: true,
     },
+    where: { userId: req.session.userid },
     raw: false,
   });
 
@@ -55,6 +56,30 @@ router.get('/', async (req, res) => {
 //   //console.log("я тут ")
 
  res.render('bin', {allBins});
+});
+
+
+router.delete('/:id', async (req, res) => {
+  try{
+  const entryTemp = await Bin.findOne({where:{id:req.params.id}});
+  await Bin.destroy({where:{id:req.params.id}});
+  } catch (error) {
+    return res.json({ isDeleteSuccessful: false, errorMessage: 'Не удалось удалить запись из базы данных.' });
+  }
+
+  return res.json({ isDeleteSuccessful: true });
+});
+
+
+router.patch('/:id', async (req, res) => {
+  try{
+  const entryTemp = await Bin.findOne({where:{id:req.params.id}});
+  await Bin.update(req.body );
+  } catch (error) {
+    return res.json({ isDeleteSuccessful: false, errorMessage: 'Не удалось удалить запись из базы данных.' });
+  }
+
+  return res.json({ isDeleteSuccessful: true });
 });
 
 module.exports = router;

@@ -41,7 +41,7 @@ padding: 10vh;
      <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Категория</label>
      <select name="catid" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
         <option selected>Выберите из списка...</option>
-       {{#each allBins}}
+       {{#each allCats}}
          <option value="{{this.id}}">{{this.catName}}</option>
        {{/each}}
       </select>

@@ -37,12 +37,12 @@
 							</td>
 							<td id='price' name='price' data-th="Price">{{this.Flower.price}}</td>
 							<td data-th="Quantity">
-								<input type="number" class="form-control text-center sumup" id='quantity' name='quantity' value="{{this.count}}">
+								<input type="number" class="form-control text-center sumup quantity" id='quantity' name='quantity' value="{{this.count}}">
 							</td>
 							<td data-th="Subtotal" class="text-center subtotal">{{this.Flower.price}}</td>
 							<td class="actions" data-th="">
-								 <button class=" btn btn-primary text-dark fa fa-refresh "></button>
-							  <button  class="btn btn-primary text-dark fa fa-trash-o"></button>							
+								 <button name='update' id="update" class=" btn btn-primary text-dark fa fa-refresh update"></button>
+							  <button  name='delete' id="delete" class="btn btn-primary text-dark fa fa-trash-o delete"></button>							
 							</td>
 						</tr>
               {{/each}}
@@ -54,7 +54,7 @@
 						<tr>
 							<td><button type="button" class="btn btn-primary text-dark mr-2 mb-2">Назад</button></td>
 							<td colspan="2" class="hidden-xs"></td>
-							<td class="hidden-xs text-center"><strong>Total $1.99</strong></td>
+							<td class="hidden-xs text-center"><strong>  {{myStorage}} </strong></td>
 							<td><button type="button" class="btn btn-primary text-dark mr-2 mb-2">Оформить</button></td>
 						</tr>
 					</tfoot>
