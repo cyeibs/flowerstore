@@ -26,7 +26,7 @@
         </button>
         <div class="dropdown-menu">
           {{#each allCats}}
-            <a class="dropdown-item" href="/catalog/{{this.catName}}">{{this.catName}}</a>
+            <a class="dropdown-item cats-button" name={{this.catName}} href="/catalog/{{this.catName}}">{{this.catName}}</a>
          {{/each}}
         </div>
         
@@ -34,7 +34,7 @@
        
                   
           <li class="nav-item">
-                     <a href="/catalog" class="btn btn-primary text-dark mr-2 mb-2">Все букеты</a>
+                     <a href="/catalog" class="btn btn-primary text-dark mr-2 mb-2 all-bucets">Все букеты</a>
                 </li>
 
       <div class="btn-group mr-2 mb-2">
@@ -44,8 +44,8 @@
         </button>
        <div class="dropdown-menu">
 
-            <a class="dropdown-item" href="/catalog/sort/byDesc">Цена: по убыванию</a>
-            <a class="dropdown-item" href="/catalog/sort/byAsc">Цена: по возрастанию</a>
+            <a class="dropdown-item sort-desc" href="/catalog/sort/byDesc">Цена: по убыванию</a>
+            <a class="dropdown-item sort-asc" href="/catalog/sort/byAsc">Цена: по возрастанию</a>
        
         </div>
 
@@ -72,7 +72,7 @@
     </div>
   </nav>
 
-    <template class="teplate-shablon">
+   <template class="teplate-shablon">
         <div class="col-12 col-md-6 id" id={this.id}>
           <div class="card bg-primary border-light shadow-soft">
               <img src={this.pic} class="card-img-top rounded-top" alt="Themesberg office">
@@ -98,7 +98,7 @@
                   <h3 class="h5 card-title mt-3">{{this.fName}}</h3>
                   <p class="card-text">{{this.descr}}</p>
                   <h3 class="h5 card-title mt-3">{{this.price}} р</h3>
-                  <a href="#" class="btn btn-primary btn-pill text-dark mr-2 mb-2">В корзину</a>
+                  <a href="#" class="btn btn-primary btn-sm">В корзину</a>
               </div>
           </div>
       </div>
