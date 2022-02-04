@@ -21,6 +21,8 @@ const contactRouter = require('./routes/contactRouter');
 
 const binRouter = require('./routes/binRouter');
 
+const whyUsRouter = require('./routes/whyUsRouter');
+
 const app = express();
 const PORT = 3000;
 
@@ -64,6 +66,8 @@ app.use('/aboutUs', aboutUsRouter);
 app.use('/contact', contactRouter);
 
 app.use('/bin', binRouter);
+
+app.use('/whyUs', whyUsRouter);
 
 // Если HTTP-запрос дошёл до этой строчки, значит ни один из ранее встречаемых рутов не ответил на запрос. Это значит, что искомого раздела просто нет на сайте. Для таких ситуаций используется код ошибки 404. Создаём небольшое middleware, которое генерирует соответствующую ошибку.
 app.use((req, res) => {
