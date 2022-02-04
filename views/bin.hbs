@@ -10,6 +10,7 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
 <div class="container">
 	<table id="cart" class="table table-hover table-condensed">
     				<thead>
@@ -21,33 +22,34 @@
 							<th style="width:10%"></th>
 						</tr>
 					</thead>
+        
 					<tbody>
-            {{!-- {{#each allBins}} --}}
-						<tr>
+           {{#each allBins}}
+						<tr class="bin" id="{{this.id}}">
 							<td data-th="Product">
 								<div class="row">
-									<div class="col-sm-2 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"/></div>
+									<div class="col-sm-2 hidden-xs"><img src="{{this.Flower.pic}}" alt="..." class="img-responsive"/></div>
 									<div class="col-sm-10">
-										<h4 class="nomargin">Букет номер раз</h4>
-										<p>Описание этих ебучих букетов</p>
+										<h4 class="nomargin">{{this.Flower.fName}}</h4>
+										<p>{{this.Flower.descr}}</p>
 									</div>
 								</div>
 							</td>
-							<td data-th="Price">$1.99</td>
+							<td id='price' name='price' data-th="Price">{{this.Flower.price}}</td>
 							<td data-th="Quantity">
-								<input type="number" class="form-control text-center" value="1">
+								<input type="number" class="form-control text-center sumup" id='quantity' name='quantity' value="{{this.count}}">
 							</td>
-							<td data-th="Subtotal" class="text-center">1.99</td>
+							<td data-th="Subtotal" class="text-center subtotal">{{this.Flower.price}}</td>
 							<td class="actions" data-th="">
 								 <button class=" btn btn-primary text-dark fa fa-refresh "></button>
 							  <button  class="btn btn-primary text-dark fa fa-trash-o"></button>							
 							</td>
 						</tr>
-            {{!-- {{/each}} --}}
+              {{/each}}
 					</tbody>
 					<tfoot>
 						<tr class="visible-xs">
-							<td class="text-center"><strong>Total 1.99</strong></td>
+							<td class="text-center"><strong>Итого: {{this.count}}</strong></td>
 						</tr>
 						<tr>
 							<td><button type="button" class="btn btn-primary text-dark mr-2 mb-2">Назад</button></td>
@@ -57,4 +59,10 @@
 						</tr>
 					</tfoot>
 				</table>
+      
 </div>
+
+    <script  src="/js/bin.js"></script>
+
+
+ 

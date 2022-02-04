@@ -10,6 +10,17 @@
   padding-bottom: 7px;
 }
 
+
+.btn {
+  position: relative;
+  transition: all 0.2s ease;
+  letter-spacing: 0.025em;
+  font-size: 1rem;
+  border-color: #D1D9E6;
+  box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #ffffff;
+  width: 100%;
+}
+
 .row {
   justify-content: center;
 }
