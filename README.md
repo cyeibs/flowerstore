@@ -6,7 +6,7 @@
 
 
 ### Versioning
-added: fetch in catalog, styles
+- added: fetch in catalog, styles
 
   
 #
