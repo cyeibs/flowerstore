@@ -1,4 +1,4 @@
-# flowerstore - e-commerce platfrom for flower's shop
+# flowerstore - e-commerce platform for flower's shop
 
 - done vie hbs
 - style: Neumorphism UI
